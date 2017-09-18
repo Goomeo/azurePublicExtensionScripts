@@ -83,7 +83,7 @@ waitDpkg;
 ( set -x; sudo apt-get update; )
 
 waitDpkg;
-( set -x; sudo apt-mark hold waagent)
+( set -x; sudo apt-mark hold waagent; )
 
 waitDpkg;
 ( set -x; sudo apt-get upgrade -y -q; )
@@ -92,7 +92,7 @@ waitDpkg;
 ( set -x; sudo apt-get install -y -q curl htop jq; )
 
 waitDpkg;
-( set -x; sudo apt-mark unhold waagent)
+( set -x; sudo apt-mark unhold waagent; )
 
 
 if ! command_exists docker || [ ! -e /var/run/docker.sock ]; then
