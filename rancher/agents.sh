@@ -89,7 +89,7 @@ waitDpkg;
 ( set -x; sudo apt-get upgrade -y -q; )
 
 waitDpkg;
-( set -x; sudo apt-get install -y -q curl htop jq; )
+( set -x; sudo apt-get install -y -q curl jq; )
 
 waitDpkg;
 ( set -x; sudo apt-mark unhold walinuxagent; )
