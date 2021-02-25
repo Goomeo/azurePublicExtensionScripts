@@ -97,7 +97,8 @@ waitDpkg;
 
 if ! command_exists docker || [ ! -e /var/run/docker.sock ]; then
     waitDpkg;
-    ( set -x; curl https://releases.rancher.com/install-docker/1.12.sh | sh; )
+    ( set -x; wget https://mirrors.aliyun.com/docker-engine/apt/repo/pool/main/d/docker-engine/docker-engine_1.12.6-0~ubuntu-xenial_amd64.deb; )
+    ( set -x; sudo apt install ./docker-engine_1.12.6-0~ubuntu-xenial_amd64.deb; )
     waitDpkg;
     ( set -x; apt-mark hold docker-engine; )
     mkdir -p /mnt/docker;
